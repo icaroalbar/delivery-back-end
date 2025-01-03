@@ -1,8 +1,8 @@
 import { UUID } from "node:crypto";
-import { Address } from "../address/address.valueobject";
-import { Menu } from "../menu/menu.entity";
-import { Payment } from "../payment/payment.entity";
-import { Delivery } from "../delivery/delivery.entity";
+import { Address } from "../../address/address.valueobject";
+import { Menu } from "../../menu/menu.entity";
+import { Payment } from "../../payment/payment.entity";
+import { Delivery } from "../../delivery/delivery.entity";
 
 export enum StatusType {
   AGUARDANDO_ACEITE = 1,
@@ -188,5 +188,19 @@ export class Food {
       throw new Error("Status inválido para entregue");
     }
     this.updateStatus(StatusType.ENTREGUE);
+  }
+
+  toJSON() {
+    return {
+      id: this._food.id,
+      date: this._food.date,
+      phone: this._food.phone,
+      name: this._food.name,
+      products: this._food.products.map((product) => product.toJSON()),
+      address: this._food.address,
+      payment: this._food.payment,
+      delivery: this._food.delivery,
+      status: this._food.status,
+    };
   }
 }

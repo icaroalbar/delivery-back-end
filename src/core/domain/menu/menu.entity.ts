@@ -79,6 +79,18 @@ export class Menu {
     }
   }
 
+  toJSON() {
+    return {
+      id: this.getId(),
+      name: this.getName(),
+      description: this.getDescription(),
+      category: this.getCategory(),
+      price: this.getPrice(),
+      quantity: this.getQuantity(),
+      total: this.getTotal(),
+    };
+  }
+
   private validatorMenu(menu: MenuProps): void {
     if (!menu.name) {
       throw new Error("Nome do cardápio é obrigatório");

@@ -26,6 +26,7 @@ describe("Menu entity", () => {
     expect(menu.getQuantity()).toBe(1);
     expect(menu.getPreparationTime()).toBe(20);
     expect(menu.getTotal()).toBe(menu.getQuantity() * menu.getPrice());
+    expect(menu.toJSON()).toBeDefined();
   });
 
   it("Deve desativar a opção no cardápio", () => {

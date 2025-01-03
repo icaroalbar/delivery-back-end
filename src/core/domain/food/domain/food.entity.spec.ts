@@ -1,10 +1,10 @@
-import { Address } from "../address/address.valueobject";
-import { Menu } from "../menu/menu.entity";
-import { Payment, PaymentType } from "../payment/payment.entity";
-import { Category } from "../category/category.entity";
+import { Address } from "../../address/address.valueobject";
+import { Menu } from "../../menu/menu.entity";
+import { Payment, PaymentType } from "../../payment/payment.entity";
+import { Category } from "../../category/category.entity";
 import { Food } from "./food.entity";
 import { randomUUID } from "node:crypto";
-import { Delivery } from "../delivery/delivery.entity";
+import { Delivery } from "../../delivery/delivery.entity";
 
 describe("Food entity", () => {
   it("Deve criar uma instância válida de Food", () => {
@@ -59,6 +59,7 @@ describe("Food entity", () => {
     expect(food.getDelivery()).toBeNull();
     expect(food.getTotal()).toBe(200);
     expect(food.estimatedDelivery()).toBeDefined();
+    expect(food.toJSON()).toBeDefined();
   });
 
   it("Deve mudar o status para recusado", () => {

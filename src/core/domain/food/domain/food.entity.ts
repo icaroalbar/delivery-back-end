@@ -64,7 +64,7 @@ export class Food {
     }
   }
 
-  estimatedDelivery(): Date {
+  estimatedDelivery(): string {
     const maxPreparationTime = Math.max(
       ...this._food.products.map((product) => product.getPreparationTime())
     );
@@ -73,11 +73,12 @@ export class Food {
     const calculateDeliveryTime = maxPreparationTime + estimatedDeliveryTime;
 
     const deliveryDate = new Date(this._food.date);
-    deliveryDate.setMinutes(
-      deliveryDate.getMinutes() + calculateDeliveryTime - 180
-    );
+    deliveryDate.setMinutes(deliveryDate.getMinutes() + calculateDeliveryTime);
 
-    return deliveryDate;
+    return deliveryDate.toLocaleTimeString("pt-BR", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   }
 
   private updateStatus(status: StatusType): void {
@@ -201,6 +202,7 @@ export class Food {
       payment: this._food.payment,
       delivery: this._food.delivery,
       status: this._food.status,
+      estimatedDelivery: this.estimatedDelivery(),
     };
   }
 }

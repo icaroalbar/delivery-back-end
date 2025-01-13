@@ -4,7 +4,7 @@ import { Payment, PaymentType } from "../../payment/payment.entity";
 import { Category } from "../../category/category.entity";
 import { Food } from "./food.entity";
 import { randomUUID } from "node:crypto";
-import { Delivery } from "../../delivery/delivery.entity";
+import { Delivery } from "../../delivery/domain/delivery.entity";
 
 describe("Food entity", () => {
   it("Deve criar uma instância válida de Food", () => {

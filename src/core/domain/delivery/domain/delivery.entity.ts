@@ -7,11 +7,13 @@ type DeliveryProps = {
 };
 
 export class Delivery {
-  private readonly _delivery: DeliveryProps & { available: boolean };
+  private readonly _delivery: DeliveryProps & { available: boolean } & {
+    createAt: Date;
+  };
 
   constructor(delivery: DeliveryProps) {
     this.validatorDelivery(delivery);
-    this._delivery = { ...delivery, available: true };
+    this._delivery = { ...delivery, available: true, createAt: new Date() };
   }
 
   getId(): UUID {
@@ -24,6 +26,10 @@ export class Delivery {
 
   getPlate(): string {
     return this._delivery.plate;
+  }
+
+  getCreatedAt(): Date {
+    return this._delivery.createAt;
   }
 
   isAvailable(): boolean {

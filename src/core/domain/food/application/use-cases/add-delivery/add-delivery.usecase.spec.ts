@@ -5,8 +5,8 @@ import { Menu } from "../../../../menu/menu.entity";
 import { Category } from "../../../../category/category.entity";
 import { Address } from "../../../../address/address.valueobject";
 import { Payment, PaymentType } from "../../../../payment/payment.entity";
+import { DeliveredFoodUseCase } from "./add-delivery.usecase";
 import { Delivery } from "../../../../delivery/domain/delivery.entity";
-import { DeliveredFoodUseCase } from "../add-delivery/add-delivery.usecase";
 
 const product = new Menu({
   id: randomUUID(),

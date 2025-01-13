@@ -2,7 +2,7 @@ import { UUID } from "node:crypto";
 import { Address } from "../../address/address.valueobject";
 import { Menu } from "../../menu/menu.entity";
 import { Payment } from "../../payment/payment.entity";
-import { Delivery } from "../../delivery/delivery.entity";
+import { Delivery } from "../../delivery/domain/delivery.entity";
 
 export enum StatusType {
   AGUARDANDO_ACEITE = 1,

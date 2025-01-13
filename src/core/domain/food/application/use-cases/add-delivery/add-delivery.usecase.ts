@@ -1,7 +1,7 @@
 import { FoodRepository } from "../../../domain/food.repository";
-import { DeliveredFoodOutputDto } from "./delivered-food.dto";
+import { DeliveredFoodOutputDto } from "./add-delivery.dto";
 
-export class CreateDeliveryUseCase {
+export class DeliveredFoodUseCase {
   constructor(private readonly foodRepository: FoodRepository) {}
 
   async execute(id: string): Promise<DeliveredFoodOutputDto> {

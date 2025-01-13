@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { Delivery } from "./delivery.entity";
-import { uuidMatch } from "../../shared/uuidMatch";
+import { uuidMatch } from "../../../shared/uuidMatch";
 
 describe("Delivery entity", () => {
   it("Deve criar um novo entregador", () => {
